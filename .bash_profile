@@ -79,3 +79,18 @@ alias ls='ls -GFh'
 # export WORKON_HOME=~/Envs
 # source $(which virtualenvwrapper.sh)
 
+function echo_red {
+    echo -e "${RED}$1${RESTORE}";
+}
+
+function echo_green {
+    echo -e "${GREEN}$1${RESTORE}";
+}
+
+function echo_yellow {
+    echo -e "${YELLOW}$1${RESTORE}";
+}
+
+function echo_blue {
+    echo -e "${CYAN}$1${RESTORE}";
+}
