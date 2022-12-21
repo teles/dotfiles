@@ -5,10 +5,6 @@ export VIRTUALENVWRAPPER_PYTHON=`which python3`
 # export WORKON_HOME=~/Envs
 # source $(which virtualenvwrapper.sh)
 
-# if [ ! -d "$WORKON_HOME/vd36" ]; then
-#    mkvirtualenv vd36 --python=$(which python3)
-# fi
-
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
   GIT_PROMPT_ONLY_IN_REPO=1
@@ -57,16 +53,6 @@ f_qfeaturebranch() {
     fi
 }
 alias qfeaturebranch=f_qfeaturebranch
-
-f_vd() {
-   cd ~/dev/plataforma
-   . dev.sh
-   workon vd36
-   nvm use v8.11.3
-   ci/decrypt-env-vault.sh
-   export_vars local
-}
-alias vd=f_vd
 
 export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
